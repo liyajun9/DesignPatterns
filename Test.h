@@ -2,7 +2,8 @@
 
 class CTest{
 public:
-	static void TestProtoTypeMode();
+	static void TestProtoTypePattern();
+	static void TestSingletonPattern();
 
 private:
 	CTest();
