@@ -1,2 +1,2 @@
 # designmode
-the 23 design mode sample in C++
+the 23 design mode samples in C++
