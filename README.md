@@ -1,2 +1,2 @@
-# designpartterns
-the 23 design mode samples in C++
+# design patterns
+the 23 design pertterns samples in C++
