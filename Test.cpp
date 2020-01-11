@@ -1,10 +1,14 @@
 #include "stdafx.h"
 #include "Test.h"
-#include "forCreation\prototypeMode\ConcretPrototype.h"
 #include <iostream>
 #include <tchar.h>
 #include <memory>
-#include "forCreation\singletonMode\Singleton.h"
+#include "forCreation\prototypePattern\ConcretPrototype.h"
+#include "forCreation\singletonPattern\Singleton.h"
+#include "forCreation\factoryMethod\ConcreteProductA.h"
+#include "forCreation\factoryMethod\ConcreteFactoryA.h"
+#include "forCreation\factoryMethod\ConcreteProductB.h"
+#include "forCreation\factoryMethod\ConcreteFactoryB.h"
 
 using namespace std;
 
@@ -26,4 +30,14 @@ void CTest::TestSingletonPattern()
 	CSingleton::GetInstance().SetData(24);
 	wcout<<"Singleton="<<CSingleton::GetInstance().GetData()<<endl;
 	wcout<<"Singleton="<<CSingleton::GetInstance().GetData()<<endl;
+}
+
+void CTest::TestFactoryMethod()
+{
+	CConcreteFactoryA factoryA;
+	CConcreteFactoryB factoryB;
+	shared_ptr<CProduct> spProduct1 = factoryA.CreateProduct();
+	shared_ptr<CProduct> spProduct2 = factoryB.CreateProduct();
+	spProduct1->play();
+	spProduct2->play();
 }

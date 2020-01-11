@@ -3,7 +3,7 @@
 
 class CConcretPrototype : public CPrototype{
 public:
-	CConcretPrototype(int nData):m_data(nData){}
+	explicit CConcretPrototype(int nData):m_data(nData){}
 	virtual ~CConcretPrototype(){}
 	CConcretPrototype(const CConcretPrototype& rhs);
 
