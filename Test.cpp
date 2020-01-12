@@ -9,6 +9,9 @@
 #include "forCreation\factoryMethod\ConcreteFactoryA.h"
 #include "forCreation\factoryMethod\ConcreteProductB.h"
 #include "forCreation\factoryMethod\ConcreteFactoryB.h"
+#include "forCreation\builderPattern\Director.h"
+#include "forCreation\builderPattern\ConcreteBuilderA.h"
+#include "forCreation\builderPattern\ConcreteBuilderB.h"
 
 using namespace std;
 
@@ -40,4 +43,15 @@ void CTest::TestFactoryMethod()
 	shared_ptr<CProduct> spProduct2 = factoryB.CreateProduct();
 	spProduct1->play();
 	spProduct2->play();
+}
+
+void CTest::TestBuilderPattern()
+{
+	shared_ptr<CDirector>  spDirectorA = make_shared<CDirector>(new CConcreteBuilderA());
+	shared_ptr<CDirector> spDirectorB = make_shared<CDirector>(new CConcreteBuilderB());
+	spDirectorA->Construct();
+	spDirectorB->Construct();
+
+	spDirectorA->GetProduct()->Show();
+	spDirectorB->GetProduct()->Show();
 }
