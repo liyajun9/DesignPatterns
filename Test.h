@@ -7,6 +7,7 @@ public:
 	static void TestFactoryMethod();
 	static void TestBuilderPattern();
 	static void TestAdapterPattern();
+	static void TestDecoratePattern();
 
 private:
 	CTest();

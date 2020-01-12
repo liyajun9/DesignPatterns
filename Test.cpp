@@ -14,6 +14,10 @@
 #include "forCreation\builderPattern\ConcreteBuilderB.h"
 #include "forStructure\Adapter\CurrClass.h"
 #include "forStructure\Adapter\Adapter.h"
+#include "forStructure\Decorate\Car.h"
+#include "forStructure\Decorate\SportsCar.h"
+#include "forStructure\Decorate\LogoDecorateCar.h"
+#include "forStructure\Decorate\WingDecorateCar.h"
 
 using namespace std;
 
@@ -63,4 +67,14 @@ void CTest::TestAdapterPattern()
 	shared_ptr<CCurrClass> spCurrClass = make_shared<CCurrClass>();
 	CAdapter adapter(spCurrClass.get());
 	adapter.Request();
+}
+
+void CTest::TestDecoratePattern()
+{
+	shared_ptr<CCar> spCar = make_shared<CSportsCar>(_T("Ferrari"));
+	spCar->Show();
+	shared_ptr<CCar> spLogoSportsCar = make_shared<CLogoDecorateCar>(spCar.get());
+	spLogoSportsCar->Show();
+	shared_ptr<CCar> spWingSportsCar = make_shared<CWingDecorateCar>(spLogoSportsCar.get());
+	spWingSportsCar->Show();
 }
