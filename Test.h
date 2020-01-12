@@ -6,6 +6,7 @@ public:
 	static void TestSingletonPattern();
 	static void TestFactoryMethod();
 	static void TestBuilderPattern();
+	static void TestAdapterPattern();
 
 private:
 	CTest();

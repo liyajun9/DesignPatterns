@@ -12,6 +12,8 @@
 #include "forCreation\builderPattern\Director.h"
 #include "forCreation\builderPattern\ConcreteBuilderA.h"
 #include "forCreation\builderPattern\ConcreteBuilderB.h"
+#include "forStructure\Adapter\CurrClass.h"
+#include "forStructure\Adapter\Adapter.h"
 
 using namespace std;
 
@@ -54,4 +56,11 @@ void CTest::TestBuilderPattern()
 
 	spDirectorA->GetProduct()->Show();
 	spDirectorB->GetProduct()->Show();
+}
+
+void CTest::TestAdapterPattern()
+{
+	shared_ptr<CCurrClass> spCurrClass = make_shared<CCurrClass>();
+	CAdapter adapter(spCurrClass.get());
+	adapter.Request();
 }
