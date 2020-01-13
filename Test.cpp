@@ -29,6 +29,8 @@
 #include "forStructure\Bridge\ConcreteImpl.h"
 #include "forStructure\Bridge\ConcreteInterface.h"
 #include "forStructure\Bridge\ConcreteImplNew.h"
+#include "forStructure\FlyWeight\FlyWeightClient.h"
+#include "forStructure\FlyWeight\FlyWeightFactory.h"
 
 using namespace std;
 
@@ -141,4 +143,26 @@ void CTest::TestBridgePattern()
 	cinterface1.Operate();
 	wcout<<endl;
 	cinterface2.Operate();
+}
+
+void CTest::TestFlyWeightPattern()
+{
+	//we logically have 6 FlyWeight object, but only 2 objects stored in factory physically
+	CFlyWeightClient client; 
+	EXDATA exData1(1, 2, 3);
+	client.AddFlyWeight(exData1, 1, 1, 1);
+	EXDATA exData2(2, 3, 4);
+	client.AddFlyWeight(exData2, 1, 1, 1);
+	EXDATA exData3(3, 4, 5);
+	client.AddFlyWeight(exData3, 1, 1, 1);
+	EXDATA exData4(4, 5, 6);
+	client.AddFlyWeight(exData4, 2, 2, 2);
+	EXDATA exData5(6, 7, 8);
+	client.AddFlyWeight(exData5, 2, 2, 2);
+	EXDATA exData6(8, 9, 10);
+	client.AddFlyWeight(exData6, 2, 2, 2);
+
+	wcout<<_T("Objects in factory: ")<<CFlyWeightFactory::GetInstance().GetSize()<<endl;
+	wcout<<_T("Extrinsic data in client: ")<<client.GetSize()<<endl;
+	client.ShowAllFlyWeights();
 }
