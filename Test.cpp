@@ -25,6 +25,10 @@
 #include "forStructure\Composite\Component.h"
 #include "forStructure\Composite\Composite.h"
 #include "forStructure\Composite\Leaf.h"
+#include "forStructure\Bridge\AbstractImpl.h"
+#include "forStructure\Bridge\ConcreteImpl.h"
+#include "forStructure\Bridge\ConcreteInterface.h"
+#include "forStructure\Bridge\ConcreteImplNew.h"
 
 using namespace std;
 
@@ -123,4 +127,18 @@ void CTest::TestCompositePattern()
 		composite.Remove(wpLeaf.lock());
 	}
 	composite.ShowName();
+}
+
+void CTest::TestBridgePattern()
+{
+	//same interface, 2 different implementation
+	shared_ptr<CAbstractionImp> spImp = make_shared<CConcreteImpl>();
+	CConcreteInterface cinterface1(spImp);
+
+	shared_ptr<CAbstractionImp> spImpNew = make_shared<CConcreteImplNew>();
+	CConcreteInterface cinterface2(spImpNew);
+
+	cinterface1.Operate();
+	wcout<<endl;
+	cinterface2.Operate();
 }

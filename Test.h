@@ -11,6 +11,7 @@ public:
 	static void TestProxyPattern();
 	static void TestFacadePattern();
 	static void TestCompositePattern();
+	static void TestBridgePattern();
 
 private:
 	CTest();
