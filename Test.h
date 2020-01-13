@@ -8,6 +8,7 @@ public:
 	static void TestBuilderPattern();
 	static void TestAdapterPattern();
 	static void TestDecoratePattern();
+	static void TestProxyPattern();
 
 private:
 	CTest();

@@ -18,6 +18,9 @@
 #include "forStructure\Decorate\SportsCar.h"
 #include "forStructure\Decorate\LogoDecorateCar.h"
 #include "forStructure\Decorate\WingDecorateCar.h"
+#include "forStructure\Proxy\ClientBase.h"
+#include "forStructure\Proxy\Client.h"
+#include "forStructure\Proxy\Proxy.h"
 
 using namespace std;
 
@@ -77,4 +80,15 @@ void CTest::TestDecoratePattern()
 	spLogoSportsCar->Show();
 	shared_ptr<CCar> spWingSportsCar = make_shared<CWingDecorateCar>(spLogoSportsCar.get());
 	spWingSportsCar->Show();
+}
+
+void CTest::TestProxyPattern()
+{
+	shared_ptr<CClientBase> spClient = make_shared<CClient>();
+	shared_ptr<CClientBase> spProxy1 = make_shared<CProxy>(spClient.get(), 1);
+	std::wcout<<_T("proxy1:")<<std::endl;
+	spProxy1->Request();
+	shared_ptr<CClientBase> spProxy2 = make_shared<CProxy>(spClient.get(), 11);
+	std::wcout<<_T("proxy2:")<<std::endl;
+	spProxy2->Request();
 }
