@@ -8,5 +8,5 @@ public:
 	~CConcreteFactoryA(){}
 
 public:
-	virtual std::shared_ptr<CProduct> CreateProduct();
+	virtual CProduct* CreateProduct();
 };

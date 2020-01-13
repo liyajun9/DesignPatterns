@@ -3,7 +3,7 @@
 #include "ConcreteProductB.h"
 #include <memory>
 
-std::shared_ptr<CProduct> CConcreteFactoryB::CreateProduct()
+CProduct* CConcreteFactoryB::CreateProduct()
 {
-	return std::make_shared<CConcreteProductB>();
+	return new CConcreteProductB();
 }

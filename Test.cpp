@@ -32,7 +32,7 @@ void CTest::TestProtoTypePattern()
 {
 	//通过克隆直接创建一个对象
 	CConcretPrototype obj(2);
-	shared_ptr<CConcretPrototype> spObj2(obj.Clone());
+	unique_ptr<CConcretPrototype> spObj2(obj.Clone());
 	wcout<<_T("obj1=")<<obj.GetData()<<endl;
 	wcout<<_T("obj2=")<<spObj2->GetData()<<endl;
 }
@@ -52,49 +52,53 @@ void CTest::TestFactoryMethod()
 {
 	CConcreteFactoryA factoryA;
 	CConcreteFactoryB factoryB;
-	shared_ptr<CProduct> spProduct1 = factoryA.CreateProduct();
-	shared_ptr<CProduct> spProduct2 = factoryB.CreateProduct();
+	unique_ptr<CProduct> spProduct1(factoryA.CreateProduct());
+	unique_ptr<CProduct> spProduct2(factoryB.CreateProduct());
 	spProduct1->play();
 	spProduct2->play();
 }
 
 void CTest::TestBuilderPattern()
 {
-	shared_ptr<CDirector>  spDirectorA = make_shared<CDirector>(new CConcreteBuilderA());
-	shared_ptr<CDirector> spDirectorB = make_shared<CDirector>(new CConcreteBuilderB());
-	spDirectorA->Construct();
-	spDirectorB->Construct();
+	unique_ptr<CDirector>  upDirectorA(new CDirector(new CConcreteBuilderA()));
+	unique_ptr<CDirector> upDirectorB(new CDirector(new CConcreteBuilderB()));
+	
+	upDirectorA->Construct();
+	upDirectorB->Construct();
 
-	spDirectorA->GetProduct()->Show();
-	spDirectorB->GetProduct()->Show();
+	upDirectorA->GetProduct()->Show();
+	upDirectorB->GetProduct()->Show();
 }
 
 void CTest::TestAdapterPattern()
 {
-	shared_ptr<CCurrClass> spCurrClass = make_shared<CCurrClass>();
-	CAdapter adapter(spCurrClass.get());
+	CCurrClass currClass;
+	CAdapter adapter(&currClass);
 	adapter.Request();
 }
 
 void CTest::TestDecoratePattern()
 {
-	shared_ptr<CCar> spCar = make_shared<CSportsCar>(_T("Ferrari"));
-	spCar->Show();
-	shared_ptr<CCar> spLogoSportsCar = make_shared<CLogoDecorateCar>(spCar.get());
-	spLogoSportsCar->Show();
-	shared_ptr<CCar> spWingSportsCar = make_shared<CWingDecorateCar>(spLogoSportsCar.get());
-	spWingSportsCar->Show();
+	CSportsCar sportsCar(_T("Ferrari"));
+	sportsCar.Show();
+
+	CLogoDecorateCar logoDecorateCar(&sportsCar);
+	logoDecorateCar.Show();
+
+	CWingDecorateCar wingDecorateCar(&logoDecorateCar);
+	wingDecorateCar.Show();
 }
 
 void CTest::TestProxyPattern()
 {
-	shared_ptr<CClientBase> spClient = make_shared<CClient>();
-	shared_ptr<CClientBase> spProxy1 = make_shared<CProxy>(spClient.get(), 1);
+	CClient client;
+	CProxy proxy(&client, 1);
 	std::wcout<<_T("proxy1:")<<std::endl;
-	spProxy1->Request();
-	shared_ptr<CClientBase> spProxy2 = make_shared<CProxy>(spClient.get(), 11);
+	proxy.Request();
+
+	CProxy proxy2(&client, 11);
 	std::wcout<<_T("proxy2:")<<std::endl;
-	spProxy2->Request();
+	proxy2.Request();
 }
 
 void CTest::TestFacadePattern()

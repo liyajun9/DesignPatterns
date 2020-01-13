@@ -9,5 +9,5 @@ public:
 	virtual ~CFactory(){}
 
 protected:
-	virtual std::shared_ptr<CProduct> CreateProduct() = 0;
+	virtual CProduct* CreateProduct() = 0;
 };
