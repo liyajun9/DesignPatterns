@@ -22,6 +22,9 @@
 #include "forStructure\Proxy\Client.h"
 #include "forStructure\Proxy\Proxy.h"
 #include "forStructure\Facade\Facade.h"
+#include "forStructure\Composite\Component.h"
+#include "forStructure\Composite\Composite.h"
+#include "forStructure\Composite\Leaf.h"
 
 using namespace std;
 
@@ -98,4 +101,22 @@ void CTest::TestFacadePattern()
 {
 	CFacade facade;
 	facade.Produce();
+}
+
+void CTest::TestCompositePattern()
+{
+	//Add 2 leafs to composite
+	shared_ptr<CComponent> spLeaf1 = make_shared<CLeaf>(_T("Leaf1"));
+	shared_ptr<CComponent> spLeaf2 = make_shared<CLeaf>(_T("Leaf2"));
+	CComposite composite;
+	composite.Add(spLeaf1);
+	composite.Add(spLeaf2);
+	composite.ShowName();
+
+	//Remove 1st. leaf from composite
+	weak_ptr<CComponent> wpLeaf = composite.GetComponent(0);
+	if(!wpLeaf.expired()){
+		composite.Remove(wpLeaf.lock());
+	}
+	composite.ShowName();
 }

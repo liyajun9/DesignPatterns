@@ -10,6 +10,7 @@ public:
 	static void TestDecoratePattern();
 	static void TestProxyPattern();
 	static void TestFacadePattern();
+	static void TestCompositePattern();
 
 private:
 	CTest();
