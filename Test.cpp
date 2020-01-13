@@ -21,6 +21,7 @@
 #include "forStructure\Proxy\ClientBase.h"
 #include "forStructure\Proxy\Client.h"
 #include "forStructure\Proxy\Proxy.h"
+#include "forStructure\Facade\Facade.h"
 
 using namespace std;
 
@@ -91,4 +92,10 @@ void CTest::TestProxyPattern()
 	shared_ptr<CClientBase> spProxy2 = make_shared<CProxy>(spClient.get(), 11);
 	std::wcout<<_T("proxy2:")<<std::endl;
 	spProxy2->Request();
+}
+
+void CTest::TestFacadePattern()
+{
+	CFacade facade;
+	facade.Produce();
 }
