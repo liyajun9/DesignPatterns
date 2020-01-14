@@ -32,6 +32,10 @@
 #include "forStructure\FlyWeight\FlyWeightClient.h"
 #include "forStructure\FlyWeight\FlyWeightFactory.h"
 #include "forBehavior\memento\WorkObj.h"
+#include "forBehavior\strategy\StrategyClient.h"
+#include "forBehavior\strategy\ConcreteAlgorithmA.h"
+#include "forBehavior\strategy\ConcreteAlgorithmB.h"
+#include "forBehavior\strategy\ConcreteAlgorithmC.h"
 
 using namespace std;
 
@@ -170,7 +174,17 @@ void CTest::TestFlyWeightPattern()
 
 void CTest::TestStrategyPattern()
 {
+	unique_ptr<CAlgorithm> upA(new CConcreteAlgorithmA());
+	unique_ptr<CAlgorithm> upB(new CConcreteAlgorithmB());
+	unique_ptr<CAlgorithm> upC(new CConcreteAlgorithmC());
+	CStrategyClient client(upA.get());
+	client.DoCalculation();
 
+	client.SetAlgorithm(upB.get());
+	client.DoCalculation();
+
+	client.SetAlgorithm(upC.get());
+	client.DoCalculation();
 }
 
 void CTest::TestTemplatePattern()
