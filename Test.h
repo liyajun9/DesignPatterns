@@ -15,6 +15,18 @@ public:
 	static void TestBridgePattern();
 	static void TestFlyWeightPattern();
 
+	static void TestStrategyPattern();
+	static void TestTemplatePattern();
+	static void TestObserverPattern();
+	static void TestIteratorPattern();
+	static void TestResponsibilityChainPattern();
+	static void TestCommandPattern();
+	static void TestMementoPattern();
+	static void TestStatePattern();
+	static void TestVisitorPattern();
+	static void TestMediatorPattern();
+	static void TestInterpreterPattern();
+
 private:
 	CTest();
 	~CTest();

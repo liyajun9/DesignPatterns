@@ -31,6 +31,7 @@
 #include "forStructure\Bridge\ConcreteImplNew.h"
 #include "forStructure\FlyWeight\FlyWeightClient.h"
 #include "forStructure\FlyWeight\FlyWeightFactory.h"
+#include "forBehavior\WorkObj.h"
 
 using namespace std;
 
@@ -165,4 +166,105 @@ void CTest::TestFlyWeightPattern()
 	wcout<<_T("Objects in factory: ")<<CFlyWeightFactory::GetInstance().GetSize()<<endl;
 	wcout<<_T("Extrinsic data in client: ")<<client.GetSize()<<endl;
 	client.ShowAllFlyWeights();
+}
+
+void CTest::TestStrategyPattern()
+{
+
+}
+
+void CTest::TestTemplatePattern()
+{
+
+}
+
+void CTest::TestObserverPattern()
+{
+
+}
+
+void CTest::TestIteratorPattern()
+{
+
+}
+
+void CTest::TestResponsibilityChainPattern()
+{
+
+}
+
+void CTest::TestCommandPattern()
+{
+
+}
+
+void CTest::TestMementoPattern()
+{
+	CWorkObj workObj;
+
+	//Open and input sth.
+	workObj.Open();
+	wstring sInputString;
+	{
+		wcout<<_T("Please enter your content...")<<endl;
+		getline(wcin, sInputString);
+		wcout<<endl;
+	}
+	workObj.SetContent(sInputString.c_str(), sInputString.length());
+	wcout<<_T("Current content is:")<<endl;
+	wcout<<_T("Open state is:")<<workObj.GetIsOpen()<<endl;
+	wcout<<_T("Your input is:  ")<<workObj.GetContent()<<endl;
+	
+	//Create a Memento
+	wcout<<_T("Creating a memento")<<endl;
+	CMemento* pMemento = workObj.CreateMemento();
+
+	//Continue input sth.
+	workObj.Close();
+	{
+		wcout<<_T("Please input your content...")<<endl;
+		getline(wcin, sInputString);
+		wcout<<endl;
+	}
+	workObj.SetContent(sInputString.c_str(), sInputString.length());
+	wcout<<_T("Current content is:")<<endl;
+	wcout<<_T("Open state is:")<<workObj.GetIsOpen()<<endl;
+	wcout<<_T("Your input is:  ")<<workObj.GetContent()<<endl;
+
+	//Recovery from Memento
+	wcout<<_T("Recover from Memento? [y/n]")<<endl;
+	TCHAR typed;
+	wcin>>typed;
+	if(typed == L'y' || typed == L'Y'){
+		wcout<<_T("Recover from last Memento...")<<endl;
+		workObj.RecoverFromMemento(pMemento);
+		wcout<<_T("Open state is:")<<workObj.GetIsOpen()<<endl;
+		wcout<<_T("Your input is:  ")<<workObj.GetContent()<<endl;
+	}else{
+		wcout<<_T("Current content is:")<<endl;
+		wcout<<_T("Open state is:")<<workObj.GetIsOpen()<<endl;
+		wcout<<_T("Your input is:  ")<<workObj.GetContent()<<endl;
+	}	
+
+	delete pMemento;
+}
+
+void CTest::TestStatePattern()
+{
+
+}
+
+void CTest::TestVisitorPattern()
+{
+
+}
+
+void CTest::TestMediatorPattern()
+{
+
+}
+
+void CTest::TestInterpreterPattern()
+{
+
 }
