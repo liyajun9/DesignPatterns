@@ -39,6 +39,10 @@
 #include "forBehavior\template\CppCompiler.h"
 #include "forBehavior\template\JavaCompiler.h"
 #include "forBehavior\iterator\MyAggregate.h"
+#include "forBehavior\chainOfResponsibility\Demand.h"
+#include "forBehavior\chainOfResponsibility\Manager.h"
+#include "forBehavior\chainOfResponsibility\Supervisor.h"
+#include "forBehavior\chainOfResponsibility\Developer.h"
 
 using namespace std;
 
@@ -220,7 +224,12 @@ void CTest::TestIteratorPattern()
 
 void CTest::TestResponsibilityChainPattern()
 {
+	CDemand demand(_T("Urgent"), _T("Build a shoping site better than Taobao"));
+	CManager manager;
+	CSupervisor supervisor; manager.SetSubordinate(&supervisor);
+	CDeveloper developer; supervisor.SetSubordinate(&developer);
 
+	manager.HandleDemand(demand);
 }
 
 void CTest::TestCommandPattern()
