@@ -43,6 +43,11 @@
 #include "forBehavior\chainOfResponsibility\Manager.h"
 #include "forBehavior\chainOfResponsibility\Supervisor.h"
 #include "forBehavior\chainOfResponsibility\Developer.h"
+#include "forBehavior\command\IOSAppCommand.h"
+#include "forBehavior\command\IOSEngineer.h"
+#include "forBehavior\command\AndroidEngineer.h"
+#include "forBehavior\command\AndroidAppCommand.h"
+#include "forBehavior\command\Invoker.h"
 
 using namespace std;
 
@@ -234,7 +239,18 @@ void CTest::TestResponsibilityChainPattern()
 
 void CTest::TestCommandPattern()
 {
+	CInvoker boss;
+	CIOSEngineer iOSEngineer;
+	CAndroidEngineer androidEngineer;
+	CIOSAppCommand iosCommand(&iOSEngineer);
+	CAndroidAppCommand andoridCommand(&androidEngineer);
 
+	boss.AddCommand(&iosCommand);
+	boss.AddCommand(&andoridCommand);
+
+	boss.Process(_T("iOS"));
+	boss.Process(_T("Android"));
+	boss.Process(_T("ffff"));
 }
 
 void CTest::TestMementoPattern()
