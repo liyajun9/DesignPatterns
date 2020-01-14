@@ -36,6 +36,8 @@
 #include "forBehavior\strategy\ConcreteAlgorithmA.h"
 #include "forBehavior\strategy\ConcreteAlgorithmB.h"
 #include "forBehavior\strategy\ConcreteAlgorithmC.h"
+#include "forBehavior\template\CppCompiler.h"
+#include "forBehavior\template\JavaCompiler.h"
 
 using namespace std;
 
@@ -189,7 +191,14 @@ void CTest::TestStrategyPattern()
 
 void CTest::TestTemplatePattern()
 {
+	CCppCompiler cppCompiler;
+	CJavaCompiler javaCompiler;
 
+	wcout<<_T("Begin to complie C++:")<<endl;
+	cppCompiler.Compile();
+	wcout<<endl;
+	wcout<<_T("Begin to complie Java:")<<endl;
+	javaCompiler.Compile();
 }
 
 void CTest::TestObserverPattern()
