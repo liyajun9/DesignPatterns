@@ -38,6 +38,7 @@
 #include "forBehavior\strategy\ConcreteAlgorithmC.h"
 #include "forBehavior\template\CppCompiler.h"
 #include "forBehavior\template\JavaCompiler.h"
+#include "forBehavior\iterator\MyAggregate.h"
 
 using namespace std;
 
@@ -208,7 +209,13 @@ void CTest::TestObserverPattern()
 
 void CTest::TestIteratorPattern()
 {
-
+	CMyAggregate aggregate;
+	unique_ptr<CMyIterator> upIter(aggregate.CreateIterator());
+	upIter->CurrentItem().Echo();
+	while(upIter->HasNext()){
+		upIter->Next();
+		upIter->CurrentItem().Echo();
+	}
 }
 
 void CTest::TestResponsibilityChainPattern()
