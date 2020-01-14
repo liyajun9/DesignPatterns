@@ -31,7 +31,7 @@
 #include "forStructure\Bridge\ConcreteImplNew.h"
 #include "forStructure\FlyWeight\FlyWeightClient.h"
 #include "forStructure\FlyWeight\FlyWeightFactory.h"
-#include "forBehavior\WorkObj.h"
+#include "forBehavior\memento\WorkObj.h"
 
 using namespace std;
 
