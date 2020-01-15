@@ -55,6 +55,7 @@
 #include "forBehavior\visitor\ParentVisitor.h"
 #include "forBehavior\visitor\FriendVisitor.h"
 #include "forBehavior\mediator\FileSelectionDialog.h"
+#include "forBehavior\interpreter\RomanNumberInterpreter.h"
 
 using namespace std;
 
@@ -356,5 +357,12 @@ void CTest::TestMediatorPattern()
 
 void CTest::TestInterpreterPattern()
 {
-
+	CRomanNumberInterpreter interpreter;
+	char input[20];
+	cout<<"Enter Roman Numeral: ";
+	while(cin>>input)
+	{
+		cout<<"			interpretion is  "<<interpreter.interpret(input)<<endl<<endl;
+		cout<<"Enter Roman Numeral: ";
+	}
 }
