@@ -54,6 +54,7 @@
 #include "forBehavior\visitor\OwnerVistor.h"
 #include "forBehavior\visitor\ParentVisitor.h"
 #include "forBehavior\visitor\FriendVisitor.h"
+#include "forBehavior\mediator\FileSelectionDialog.h"
 
 using namespace std;
 
@@ -339,7 +340,18 @@ void CTest::TestVisitorPattern()
 
 void CTest::TestMediatorPattern()
 {
+	CFileSelectionDialog dialog;
+	dialog.handleEvent(CFileSelectionDialog::DirectoryList);wcout<<endl;
+	dialog.handleEvent(CFileSelectionDialog::FileList);wcout<<endl;
+	dialog.handleEvent(CFileSelectionDialog::FilterEditor);wcout<<endl;
+	dialog.handleEvent(CFileSelectionDialog::SelectionEditor);wcout<<endl;
 
+	wcout<<endl;
+
+	dialog.getWidget(CFileSelectionDialog::DirectoryList)->changed();wcout<<endl;
+	dialog.getWidget(CFileSelectionDialog::FileList)->changed();wcout<<endl;
+	dialog.getWidget(CFileSelectionDialog::FilterEditor)->changed();wcout<<endl;
+	dialog.getWidget(CFileSelectionDialog::SelectionEditor)->changed();wcout<<endl;
 }
 
 void CTest::TestInterpreterPattern()
