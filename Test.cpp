@@ -49,6 +49,11 @@
 #include "forBehavior\command\AndroidAppCommand.h"
 #include "forBehavior\command\Invoker.h"
 #include "forBehavior\state\Machine.h"
+#include "forBehavior\visitor\BedRoomElement.h"
+#include "forBehavior\visitor\LivingRoomElement.h"
+#include "forBehavior\visitor\OwnerVistor.h"
+#include "forBehavior\visitor\ParentVisitor.h"
+#include "forBehavior\visitor\FriendVisitor.h"
 
 using namespace std;
 
@@ -316,7 +321,20 @@ void CTest::TestStatePattern()
 
 void CTest::TestVisitorPattern()
 {
+	CBedRoomElement bedroom;
+	CLivingRoomElement livingroom;
 
+	COwnerVisitor myself;
+	CParentVisitor myParent;
+	CFriendVisitor myFriend;
+
+	bedroom.accept(myself);
+	bedroom.accept(myParent);
+	bedroom.accept(myFriend);
+
+	livingroom.accept(myself);
+	livingroom.accept(myParent);
+	livingroom.accept(myFriend);
 }
 
 void CTest::TestMediatorPattern()
