@@ -48,6 +48,7 @@
 #include "forBehavior\command\AndroidEngineer.h"
 #include "forBehavior\command\AndroidAppCommand.h"
 #include "forBehavior\command\Invoker.h"
+#include "forBehavior\state\Machine.h"
 
 using namespace std;
 
@@ -306,7 +307,11 @@ void CTest::TestMementoPattern()
 
 void CTest::TestStatePattern()
 {
-
+	CMachine machine;
+	machine.On();
+	machine.Pause();
+	machine.Resume();
+	machine.Off();
 }
 
 void CTest::TestVisitorPattern()
