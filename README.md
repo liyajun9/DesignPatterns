@@ -1,16 +1,31 @@
 # design patterns
 the 23 design pertterns samples in C++
 
-## for Creation
--Prototype
--Singleton
--Factory method
--Abstract Factory
--Builder
+## Creational(关注对象创建-实现Ioc控制反转到框架)
+-Singleton       只允许创建一个
+-Prototype       通过复制快速创建
+-Factory method  通过一个方法创建，基类相同的不同类对象由方法参数和具体实现确定
+-Abstract Factory 通过继承相同抽象类的工厂对象创建，基类相同的不同产品由不同方法创建，工厂可多态实现更多控制，工厂对象被组合到客户中被客户使用
+-Builder         通过构造者创建、配置、管理生命，构造者一般又由监管者管理方便一键创建
 
-## for Structure
--Adapter
--Decorate
--Proxy
+## Structural(关注大的结构-特别是与对象的关系)
+-Adapter  新类作为适配器(实现方式：继承目标接口，组合当前对象)
+-Decorate 新类包含旧类对象，增加功能(实现方法：新旧类继承相同接口，新类聚合旧类对象)
+-Proxy    新类包含旧类对象，增加控制(实现方法：同上). 原理基本相同，只是用途不同.
+-Bridge   实现的多态(实现方法：组合负责实现的对象).与策略模式很相似，只是桥接模式分离的是整个实现(所以为结构型)，而策略模式分离的只是部分算法.
+-Composite 新类组合所有叶子(实现方法：新类与叶子继承相同接口，新类包含叶子集，新类管理叶子，新类方法中遍历调用所有叶子方法)
+-FlyWeight 共享内部状态(实现方法：享元工厂保存共享的内部状态，客户端保存独立的外部状态)
+-Facade   新类集中调用多个类方法，相当于操作面板
 
-## for Action
+## Behavioral(关注具体方法)
+-Strategy 算法的多态(实现方式：聚合算法，注入算法)
+-Template 流程的模板化(实现方式：继承模板)
+-Observer 观察者和多态(实现方式：聚合观察者集)
+-Iterator 容器迭代和对象多态(实现方式：工厂生产迭代器，并将自身组合到迭代器以操作自身) 
+-Mediator 容器管理和对象多态(实现方式：聚合对象集)
+-Chain of Responsibility 遍历责任链和元素多态(实现方式：聚合下一个元素)
+-Command 封装命令和处理者(实现方式：命令聚合处理者，调用者聚合命令集)
+-Memento 封装记录(实现方式：工厂生产备忘录，并管理其生命周期)
+-State   封装状态(实现方式：聚合状态，状态切换时实现生命周期自管理)
+-Visitor 访问者的多态(实现方式：让函数参数访问自己)
+-Interpreter 抽象语法树
