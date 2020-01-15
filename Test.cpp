@@ -56,6 +56,10 @@
 #include "forBehavior\visitor\FriendVisitor.h"
 #include "forBehavior\mediator\FileSelectionDialog.h"
 #include "forBehavior\interpreter\RomanNumberInterpreter.h"
+#include "forBehavior\observer\Subject.h"
+#include "forBehavior\observer\ConcreteObserverA.h"
+#include "forBehavior\observer\ConcreteObserverB.h"
+#include "forBehavior\observer\ConcreteObserverC.h"
 
 using namespace std;
 
@@ -221,7 +225,28 @@ void CTest::TestTemplatePattern()
 
 void CTest::TestObserverPattern()
 {
+	CSubject subject;
+	CConcreteObserverA a;
+	CConcreteObserverB b;
+	CConcreteObserverC c;
 
+	subject.registerObserver(&a);
+	subject.registerObserver(&b);
+	subject.registerObserver(&c);
+
+	subject.SetData(1);
+	subject.setChanged(true);
+	subject.notifyAll();
+	wcout<<endl;
+	subject.notifyDataAll();
+
+	wcout<<endl<<endl;
+	subject.removeObserver(&a);
+	subject.SetData(9);
+	subject.setChanged(true);
+	subject.notifyAll();
+	wcout<<endl;
+	subject.notifyDataAll();
 }
 
 void CTest::TestIteratorPattern()
