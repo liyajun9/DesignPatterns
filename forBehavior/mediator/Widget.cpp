@@ -2,10 +2,9 @@
 #include "Widget.h"
 #include "FileSelectionDialog.h"
 
-using namespace std;
 void CWidget::changed()
 {
-	wcout<<_T("widget changed")<<endl;
+	std::wcout<<_T("widget changed")<<std::endl;
 	m_pMediator->widgetChanged(this);
 }
 

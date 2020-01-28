@@ -2,13 +2,12 @@
 #include "ConcreteObserverA.h"
 #include "Subject.h"
 
-using namespace std;
 void CConcreteObserverA::update(const CSubject& subject)
 {
-	wcout<<_T("ObserverA being notified:   new data is ")<<subject.GetData()<<endl;
+	std::wcout<<_T("ObserverA being notified:   new data is ")<<subject.GetData()<<std::endl;
 }
 
 void CConcreteObserverA::update()
 {
-	wcout<<_T("ObserverA being notified:   data has been changed")<<endl;
+	std::wcout<<_T("ObserverA being notified:   data has been changed")<<std::endl;
 }

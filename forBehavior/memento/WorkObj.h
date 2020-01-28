@@ -1,7 +1,6 @@
 #pragma once
 #include <memory>
 #include <tchar.h>
-using namespace std;
 class CMemento;
 
 typedef struct state{
@@ -27,5 +26,5 @@ private:
 	TCHAR m_content[260];
 	bool m_bIsOpen;
 
-	shared_ptr<STATE> m_spState;
+	std::shared_ptr<STATE> m_spState;
 };

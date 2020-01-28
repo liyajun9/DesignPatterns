@@ -1,13 +1,12 @@
 #include "stdafx.h"
 #include "EditWidget.h"
 
-using namespace std;
 void CEditWidget::query()
 {
-	wcout<<_T("editwidget query")<<endl;
+	std::wcout<<_T("editwidget query")<<std::endl;
 }
 
 void CEditWidget::update()
 {
-	wcout<<_T("editwidget update")<<endl;
+	std::wcout<<_T("editwidget update")<<std::endl;
 }

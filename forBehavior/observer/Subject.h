@@ -2,7 +2,6 @@
 #include <list>
 #include "AbstractObserver.h"
 
-using namespace std;
 class CSubject{
 public:
 	CSubject():m_bChanged(false), m_nData(0){}
@@ -22,7 +21,7 @@ public:
 	void SetData(int nData); 
 
 private:
-	list<CAbstractObserver*> m_listObserver;
+	std::list<CAbstractObserver*> m_listObserver;
 	bool m_bChanged;
 
 	int m_nData;

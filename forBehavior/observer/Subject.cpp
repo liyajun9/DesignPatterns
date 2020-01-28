@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Subject.h"
 
-using namespace std;
+using std::list;
 void CSubject::registerObserver(CAbstractObserver* pObserver)
 {
 	m_listObserver.push_back(pObserver);

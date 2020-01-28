@@ -61,7 +61,17 @@
 #include "forBehavior\observer\ConcreteObserverB.h"
 #include "forBehavior\observer\ConcreteObserverC.h"
 
-using namespace std;
+using std::wcout;
+using std::cout;
+using std::endl;
+using std::unique_ptr;
+using std::shared_ptr;
+using std::weak_ptr;
+using std::make_shared;
+using std::cin;
+using std::wcin;
+using std::wstring;
+using std::string;
 
 void CTest::TestProtoTypePattern()
 {

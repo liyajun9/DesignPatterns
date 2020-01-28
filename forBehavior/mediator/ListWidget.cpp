@@ -1,13 +1,12 @@
 #include "stdafx.h"
 #include "ListWidget.h"
 
-using namespace std;
 void CListWidget::query()
 {
-	wcout<<_T("listwidget query")<<endl;
+	std::wcout<<_T("listwidget query")<<std::endl;
 }
 
 void CListWidget::update()
 {
-	wcout<<_T("listwidget update")<<endl;
+	std::wcout<<_T("listwidget update")<<std::endl;
 }

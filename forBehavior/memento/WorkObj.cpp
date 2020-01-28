@@ -31,12 +31,12 @@ bool CWorkObj::GetIsOpen() const
 CMemento* CWorkObj::CreateMemento()
 {
 	if(!m_spState){
-		m_spState = make_shared<STATE>();
+		m_spState = std::make_shared<STATE>();
 	}
 	m_spState->isOpen = m_bIsOpen;
 	memcpy(m_spState->content, m_content, 260);
 
-	weak_ptr<STATE> wp = m_spState;
+	std::weak_ptr<STATE> wp = m_spState;
 
 	return new CMemento(wp);
 }
@@ -44,7 +44,7 @@ CMemento* CWorkObj::CreateMemento()
 void CWorkObj::SaveToMemento(CMemento* pMemento)
 {
 	if(false == pMemento->m_wpState.expired()){
-		shared_ptr<STATE> sp = pMemento->m_wpState.lock();
+		std::shared_ptr<STATE> sp = pMemento->m_wpState.lock();
 		sp->isOpen = m_bIsOpen;
 		memcpy(m_spState->content, m_content, 260);
 	}
@@ -53,7 +53,7 @@ void CWorkObj::SaveToMemento(CMemento* pMemento)
 void CWorkObj::RecoverFromMemento(CMemento* pMemento)
 {
 	if(false==pMemento->m_wpState.expired()){
-		shared_ptr<STATE> sp = pMemento->m_wpState.lock();
+		std::shared_ptr<STATE> sp = pMemento->m_wpState.lock();
 		m_bIsOpen = sp->isOpen;
 		memcpy(m_content, m_spState->content, 260);
 	}

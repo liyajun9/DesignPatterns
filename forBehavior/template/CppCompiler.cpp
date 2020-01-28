@@ -2,23 +2,22 @@
 #include "CppCompiler.h"
 #include <tchar.h>
 
-using namespace std;
 void CCppCompiler::LexicalAnalysis()
 {
-	wcout<<_T("execute C++ LexicalAnalysis...")<<endl;
+	std::wcout<<_T("execute C++ LexicalAnalysis...")<<std::endl;
 }
 
 void CCppCompiler::SyntaxAnalysis()
 {
-	wcout<<_T("execute C++ SyntaxAnalysis...")<<endl;
+	std::wcout<<_T("execute C++ SyntaxAnalysis...")<<std::endl;
 }
 
 void CCppCompiler::SemanticAnalysis()
 {
-	wcout<<_T("execute C++ SemanticAnalysis...")<<endl;
+	std::wcout<<_T("execute C++ SemanticAnalysis...")<<std::endl;
 }
 
 void CCppCompiler::GenerateObjCode()
 {
-	wcout<<_T("execute C++ GenerateObjCode...")<<endl;
+	std::wcout<<_T("execute C++ GenerateObjCode...")<<std::endl;
 }

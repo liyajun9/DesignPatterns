@@ -1,8 +1,7 @@
 #include "stdafx.h"
 #include "ConcreteProductB.h"
 
-using namespace std;
 void CConcreteProductB::play()
 {
-	wcout<<_T("play ConcreteProductB")<<endl;
+	std::wcout<<_T("play ConcreteProductB")<<std::endl;
 }

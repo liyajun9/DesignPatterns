@@ -3,12 +3,10 @@
 #include <vector>
 #include "FlyWeight.h"
 
-using namespace std;
-
 class CFlyWeightFactory{
 public:
 	static CFlyWeightFactory& GetInstance();
-	weak_ptr<CFlyWeight> CreateFlyWeight(int data1, int data2, int data3);
+	std::weak_ptr<CFlyWeight> CreateFlyWeight(int data1, int data2, int data3);
 
 	int GetSize() const;
 
@@ -18,5 +16,5 @@ private:
 	CFlyWeightFactory& operator=(const CFlyWeightFactory& rhs);
 	~CFlyWeightFactory(){}
 
-	vector<shared_ptr<CFlyWeight>> m_vecFlyWeights;
+	std::vector<std::shared_ptr<CFlyWeight>> m_vecFlyWeights;
 };

@@ -2,23 +2,22 @@
 #include "JavaCompiler.h"
 #include <tchar.h>
 
-using namespace std;
 void CJavaCompiler::LexicalAnalysis()
 {
-	wcout<<_T("execute Java LexicalAnalysis...")<<endl;
+	std::wcout<<_T("execute Java LexicalAnalysis...")<<std::endl;
 }
 
 void CJavaCompiler::SyntaxAnalysis()
 {
-	wcout<<_T("execute Java SyntaxAnalysis...")<<endl;
+	std::wcout<<_T("execute Java SyntaxAnalysis...")<<std::endl;
 }
 
 void CJavaCompiler::SemanticAnalysis()
 {
-	wcout<<_T("execute Java SemanticAnalysis...")<<endl;
+	std::wcout<<_T("execute Java SemanticAnalysis...")<<std::endl;
 }
 
 void CJavaCompiler::GenerateObjCode()
 {
-	wcout<<_T("execute Java GenerateObjCode...")<<endl;
+	std::wcout<<_T("execute Java GenerateObjCode...")<<std::endl;
 }
