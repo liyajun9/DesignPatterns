@@ -1,5 +1,5 @@
 #pragma once
-#include "..\..\..\YJ_WinTools\Log\tstring.h"
+#include "ttype.h"
 
 class CFileSelectionDialog;
 class CWidget{

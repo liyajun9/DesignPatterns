@@ -1,6 +1,6 @@
 #pragma once
 #include "Component.h"
-#include "..\..\..\YJ_WinTools\Log\tstring.h"
+#include "..\ttype.h"
 
 class CLeaf : public CComponent{
 public:

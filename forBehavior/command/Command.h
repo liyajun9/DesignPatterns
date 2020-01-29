@@ -1,6 +1,6 @@
 #pragma once
 #include "Receiver.h"
-#include "..\..\..\YJ_WinTools\Log\tstring.h"
+#include "ttype.h"
 
 class CAbstractCommand{
 public:

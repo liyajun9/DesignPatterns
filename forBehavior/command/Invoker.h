@@ -1,7 +1,7 @@
 #pragma once
 #include <list>
 #include <memory>
-#include "..\..\..\YJ_WinTools\Log\tstring.h"
+#include "ttype.h"
 #include "Command.h"
 
 class CInvoker{

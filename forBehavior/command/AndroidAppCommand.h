@@ -1,6 +1,6 @@
 #pragma  once
 #include "Command.h"
-#include "..\..\..\YJ_WinTools\Log\tstring.h"
+#include "ttype.h"
 
 class CAndroidAppCommand : public CAbstractCommand{
 public:

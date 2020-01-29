@@ -1,5 +1,5 @@
 #pragma once
-#include "..\..\..\YJ_WinTools\Log\tstring.h"
+#include "ttype.h"
 
 /*Roman numbers Grammar:
 romanNumeral :={thouands} {hundreds} {tens} {ones}
