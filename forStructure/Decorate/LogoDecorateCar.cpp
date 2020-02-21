@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "LogoDecorateCar.h"
 
 CLogoDecorateCar::CLogoDecorateCar(CCar* pCar):m_pCar(pCar)

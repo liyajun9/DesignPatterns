@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "AndroidAppCommand.h"
 
 tstring CAndroidAppCommand::GetName() const

@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "LivingRoomElement.h"
 #include "VisitorBase.h"
 

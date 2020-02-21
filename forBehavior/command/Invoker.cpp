@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "Invoker.h"
 
 void CInvoker::AddCommand(CAbstractCommand* pCCommand)

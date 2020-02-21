@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "OwnerVistor.h"
 
 void COwnerVisitor::visitBedRoom(CElementBase* pElement)

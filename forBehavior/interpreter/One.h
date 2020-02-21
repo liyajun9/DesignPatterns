@@ -5,22 +5,22 @@ public:
 	COne(int n):CRomanNumberInterpreter(n){}
 	virtual ~COne(){}
 
-	char one()
+	const char one()
 	{
 		return 'I';
 	}
 
-	char* four()
+	const char* four()
 	{
 		return "IV";
 	}
 
-	char five()
+	const char five()
 	{
 		return 'V';
 	}
 
-	char* nine()
+	const char* nine()
 	{
 		return "IX";
 	}

@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "Command.h"
 
 void CAbstractCommand::Process()

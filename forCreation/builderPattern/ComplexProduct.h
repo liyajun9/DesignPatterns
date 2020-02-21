@@ -1,5 +1,5 @@
 #pragma once
-#include "ttype.h"
+#include "..\..\ttype.h"
 
 class CComplexProduct{
 public:

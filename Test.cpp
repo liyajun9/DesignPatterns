@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "Test.h"
 #include <iostream>
 #include <tchar.h>
@@ -165,7 +165,8 @@ void CTest::TestCompositePattern()
 	//Remove 1st. leaf from composite
 	weak_ptr<CComponent> wpLeaf = composite.GetComponent(0);
 	if(!wpLeaf.expired()){
-		composite.Remove(wpLeaf.lock());
+		auto leaf = wpLeaf.lock();
+		composite.Remove(leaf);
 	}
 	composite.ShowName();
 }

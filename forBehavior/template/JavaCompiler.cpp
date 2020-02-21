@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "JavaCompiler.h"
 #include <tchar.h>
 

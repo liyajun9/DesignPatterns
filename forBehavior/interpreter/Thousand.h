@@ -6,22 +6,22 @@ public:
 	CThousand(int n):CRomanNumberInterpreter(n){}
 	virtual ~CThousand(){}
 
-	char one()
+	const char one()
 	{
 		return 'M';
 	}
 
-	char* four()
+	const char* four()
 	{
 		return "";
 	}
 
-	char five()
+	const char five()
 	{
 		return '\0';
 	}
 
-	char* nine()
+	const char* nine()
 	{
 		return "";
 	}

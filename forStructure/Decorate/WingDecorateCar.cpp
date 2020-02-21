@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "WingDecorateCar.h"
 
 CWingDecorateCar::CWingDecorateCar(CCar* pCar):m_pCar(pCar)

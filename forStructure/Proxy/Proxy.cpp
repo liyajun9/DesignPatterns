@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "Proxy.h"
 
 CProxy::CProxy(CClientBase* pClientBase, int nNum)

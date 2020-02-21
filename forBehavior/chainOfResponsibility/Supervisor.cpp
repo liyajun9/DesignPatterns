@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "Supervisor.h"
 
 void CSupervisor::Handle(const CDemand& demand)

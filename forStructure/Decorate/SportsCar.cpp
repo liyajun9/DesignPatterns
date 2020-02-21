@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "SportsCar.h"
 
 CSportsCar::CSportsCar(tstring sName):m_sName(sName)

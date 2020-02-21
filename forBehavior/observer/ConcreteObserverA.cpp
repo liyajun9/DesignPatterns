@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "ConcreteObserverA.h"
 #include "Subject.h"
 

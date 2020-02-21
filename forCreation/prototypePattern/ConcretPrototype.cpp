@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "ConcretPrototype.h"
 
 CConcretPrototype::CConcretPrototype(const CConcretPrototype& rhs)

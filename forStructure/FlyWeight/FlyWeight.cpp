@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "FlyWeight.h"
 
 void CFlyWeight::SetExData(const EXDATA& exData)

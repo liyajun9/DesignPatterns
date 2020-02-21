@@ -1,5 +1,5 @@
 #pragma once
-#include "ttype.h"
+#include "..\..\ttype.h"
 
 /*Roman numbers Grammar:
 romanNumeral :={thouands} {hundreds} {tens} {ones}
@@ -24,10 +24,10 @@ public:
 	virtual void interpret(char* input, int& total);
 
 protected:
-	virtual char one(){ return '\0';}
-	virtual char* four(){ return NULL;}
-	virtual char five(){ return '\0';}
-	virtual char* nine(){ return NULL; }
+	virtual const char one(){ return '\0';}
+	virtual const char* four(){ return NULL;}
+	virtual const char five(){ return '\0';}
+	virtual const char* nine(){ return NULL; }
 	virtual int multiplier(){ return 0; }
 
 private:

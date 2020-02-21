@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "Director.h"
 
 CDirector::CDirector(CBuilder* pBuilder):m_pBuilder(pBuilder)

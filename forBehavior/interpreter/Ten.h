@@ -5,22 +5,22 @@ public:
 	CTen(int n):CRomanNumberInterpreter(n){}
 	virtual ~CTen(){}
 
-	char one()
+	const char one()
 	{
 		return 'X';
 	}
 
-	char* four()
+	const char* four()
 	{
 		return "XL";
 	}
 
-	char five()
+	const char five()
 	{
 		return 'L';
 	}
 
-	char* nine()
+	const char* nine()
 	{
 		return "XC";
 	}

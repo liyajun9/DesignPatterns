@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "Tester.h"
 
 bool CTester::Test()

@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "ConcreteFactoryB.h"
 #include "ConcreteProductB.h"
 #include <memory>

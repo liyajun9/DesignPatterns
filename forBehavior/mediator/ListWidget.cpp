@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "ListWidget.h"
 
 void CListWidget::query()

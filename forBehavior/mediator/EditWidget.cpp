@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "EditWidget.h"
 
 void CEditWidget::query()

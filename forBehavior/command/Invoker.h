@@ -1,7 +1,7 @@
 #pragma once
 #include <list>
 #include <memory>
-#include "ttype.h"
+#include "..\..\ttype.h"
 #include "Command.h"
 
 class CInvoker{

@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "Developer.h"
 
 void CDeveloper::Handle(const CDemand& demand)

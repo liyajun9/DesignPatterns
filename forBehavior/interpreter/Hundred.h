@@ -5,22 +5,22 @@ public:
 	CHundred(int n):CRomanNumberInterpreter(n){}
 	virtual ~CHundred(){}
 
-	char one()
+	const char one()
 	{
 		return 'C';
 	}
 
-	char* four()
+	const char* four()
 	{
 		return "CD";
 	}
 
-	char five()
+	const char five()
 	{
 		return 'D';
 	}
 
-	char* nine()
+	const char* nine()
 	{
 		return "CM";
 	}

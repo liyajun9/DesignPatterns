@@ -1,6 +1,6 @@
 #pragma once
 #include "Receiver.h"
-#include "ttype.h"
+#include "..\..\ttype.h"
 
 class CAbstractCommand{
 public:

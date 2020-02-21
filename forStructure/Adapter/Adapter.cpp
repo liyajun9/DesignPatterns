@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "Adapter.h"
 
 CAdapter::CAdapter(CCurrClass* pCurrClass):m_pCurrClass(pCurrClass)

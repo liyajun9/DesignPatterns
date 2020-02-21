@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "Widget.h"
 #include "FileSelectionDialog.h"
 

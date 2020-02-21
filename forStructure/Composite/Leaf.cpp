@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "Leaf.h"
 
 CLeaf::CLeaf(const tstring& sName)

@@ -1,9 +1,10 @@
-#include "stdafx.h"
+#include "pch.h"
 #include "RomanNumberInterpreter.h"
 #include "Thousand.h"
 #include "Hundred.h"
 #include "Ten.h"
 #include "One.h"
+#pragma warning(disable:4996)
 
 CRomanNumberInterpreter::CRomanNumberInterpreter()
 {
